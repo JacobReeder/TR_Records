@@ -1,25 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import About from './components/About';
 import Nav from './components/Nav';
+import Gallery from './components/Gallery';
 
 
-import './App.css';
 
 function App() {
+
+  const [categories] = useState([
+    {
+      name: 'bands',
+      description: 'Band album covers',
+    },
+    { name: '', description: '' },
+   
+  ]); 
+
+  const [currentCategory, setCurrentCategory] = useState(categories[0]);
   return (
     <div>
-      <Nav></Nav>
+      <Nav
+         categories={categories}
+         setCurrentCategory={setCurrentCategory}
+         currentCategory={currentCategory}></Nav>
       <main>
+        <Gallery currentCategory={currentCategory}></Gallery>
         <About>
         
-        <a
-          className="App-link"
-          href="https://transylvaniantapes.bandcamp.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Transylvanian Recordings
-        </a>
         </About>
       </main>
     </div>
