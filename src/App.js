@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import About from './components/About';
 import Nav from './components/Nav';
-import Gallery from './components/Gallery';
+import Releases from './components/Releases';
 
 
 
@@ -24,10 +24,13 @@ function App() {
          setCurrentCategory={setCurrentCategory}
          currentCategory={currentCategory}></Nav>
       <main>
-        <Gallery currentCategory={currentCategory}></Gallery>
+        <div>
+        <Releases currentCategory={currentCategory}></Releases>
         <About>
         
+        
         </About>
+        </div>
       </main>
     </div>
   );
