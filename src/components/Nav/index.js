@@ -37,10 +37,14 @@ function Nav (props) {
                             }`}
                           key={category.name}
                         >
-                            <span onClick={categorySelected}>
-                                {category.name}
-                                {capitalizeFirstLetter(category.name)}
-                            </span>
+                     <span
+                            onClick={() => {
+                            setCurrentCategory(category);
+                            }}
+                            >
+                         {capitalizeFirstLetter(category.name)}
+                      </span>
+            
                         </li>
                     ))}
                 </ul>
